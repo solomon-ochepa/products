@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\OAuth\app\Http\Controllers\APi\OAuthController;
 
 /*
     |--------------------------------------------------------------------------
@@ -14,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('v1')->group(function () {
-    //
+    Route::post('/register', [OAuthController::class, 'register'])->name('register');
+    Route::post('/login', [OAuthController::class, 'login'])->name('login');
 });
