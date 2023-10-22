@@ -14,7 +14,7 @@ use Modules\Product\app\Http\Controllers\Api\ProductController;
     |
 */
 
-Route::/*middleware(['auth:api'])->*/prefix('v1')->group(function () {
+Route::/*middleware(['auth:api'])->*/ prefix('v1')->group(function () {
     Route::apiResource('product', ProductController::class)->except(['index'])->names('product');
     Route::get('products', [ProductController::class, 'index'])->name('product.index');
     Route::patch('product/{product}/restore', [ProductController::class, 'restore'])->name('product.restore');
