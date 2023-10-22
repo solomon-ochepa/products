@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Product\app\Http\Controllers\ProductController;
+use Modules\Product\app\Livewire\Index;
+use Modules\Product\app\Livewire\Show;
 
 /*
     |--------------------------------------------------------------------------
@@ -20,4 +21,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Route::get('product/{product}/restore', [ProductController::class, 'restore'])->name('product.restore');
     // Route::delete('product/{product}/permanent', [ProductController::class, 'permanent'])->name('product.destroy.permanent');
     // Route::get('product', fn () => redirect()->route('product.index'))->name('product.index.redirect');
+
+    // Route::get('products/{product?}', Index::class)->name('product.index');
+    // Route::get('product/{product}', Show::class)->name('product.show');
+    // Route::get('product', fn () => redirect(route('product.index')));
 });

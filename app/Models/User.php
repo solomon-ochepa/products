@@ -13,7 +13,7 @@ use Modules\User\app\Models\User as ModulesUser;
 
 class User extends ModulesUser
 {
-    use HasApiTokens, HasFactory, Notifiable, HasUuids;
+    use HasApiTokens, HasFactory, HasUuids, Notifiable;
 
     /**
      * The attributes that are mass assignable.

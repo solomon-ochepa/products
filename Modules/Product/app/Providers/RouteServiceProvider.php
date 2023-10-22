@@ -37,16 +37,14 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes(): void
     {
-        // Tenant route (web)
-        if (file_exists($tenant_web_route = module_path('Product', '/routes/web.tenant.php'))) {
-            Route::middleware('web')->namespace($this->moduleNamespace)->group($tenant_web_route);
-        }
-
         // Central domains route (web)
         $central_domains = config('tenancy.central_domains');
         $web_route = module_path('Product', '/routes/web.php');
 
-        if ($central_domains) {
+        // Tenant route (web)
+        if ($central_domains and file_exists($tenant_web_route = module_path('Product', '/routes/web.tenant.php'))) {
+            Route::middleware('web')->namespace($this->moduleNamespace)->group($tenant_web_route);
+
             foreach ($central_domains as $domain) {
                 Route::middleware('web')->domain($domain)->namespace($this->moduleNamespace)->group($web_route);
             }
@@ -60,16 +58,14 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes(): void
     {
-        // Tenant route (api)
-        if (file_exists($tenant_api_route = module_path('Product', '/routes/api.tenant.php'))) {
-            Route::prefix('api')->middleware('api')->namespace($this->moduleNamespace)->group($tenant_api_route);
-        }
-
         // Central domains route (api)
         $central_domains = config('tenancy.central_domains');
         $api_route = module_path('Product', '/routes/api.php');
 
-        if ($central_domains) {
+        // Tenant route (api)
+        if ($central_domains and file_exists($tenant_api_route = module_path('Product', '/routes/api.tenant.php'))) {
+            Route::prefix('api')->middleware('api')->namespace($this->moduleNamespace)->group($tenant_api_route);
+
             foreach ($central_domains as $domain) {
                 Route::prefix('api')->middleware('api')->domain($domain)->namespace($this->moduleNamespace)->group($api_route);
             }
