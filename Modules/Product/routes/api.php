@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Modules\Product\app\Http\Controllers\Api\ProductController;
 
 /*
     |--------------------------------------------------------------------------
@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
     |
 */
 
-Route::middleware(['auth:api'])->prefix('v1')->group(function () {
-    Route::get('/product', fn (Request $request) => $request->user());
+Route::/*middleware(['auth:api'])->*/prefix('v1')->group(function () {
+    Route::apiResource('product', ProductController::class)->except(['index'])->names('product');
+    Route::get('products', [ProductController::class, 'index'])->name('product.index');
+    Route::patch('product/{product}/restore', [ProductController::class, 'restore'])->name('product.restore');
+    Route::delete('product/{product}/permanent',
+        [ProductController::class, 'permanent']
+    )->name('product.destroy.permanent');
+    Route::get('product', fn () => redirect()->route('product.index'))->name('product.index.redirect');
 });

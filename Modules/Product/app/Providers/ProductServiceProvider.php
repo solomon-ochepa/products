@@ -52,7 +52,7 @@ class ProductServiceProvider extends ServiceProvider
         $sourcePath = module_path($this->moduleName, 'resources/views');
 
         $this->publishes([
-            $sourcePath => $viewPath
+            $sourcePath => $viewPath,
         ], ['views', $this->moduleNameLower.'-module-views']);
 
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);
