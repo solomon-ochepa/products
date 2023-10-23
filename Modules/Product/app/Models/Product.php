@@ -16,7 +16,7 @@ use Plank\Mediable\Mediable;
 
 class Product extends Model
 {
-    use HasFactory, HasUuids, Sluggable, Mediable;
+    use HasFactory, HasUuids, Mediable, Sluggable;
 
     /**
      * The attributes that are mass assignable.

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5042cf47786dba9d123d4fe98ee54523",
+    "content-hash": "fcca63903073f2b3b17f9aa63b9a9a80",
     "packages": [
         {
             "name": "brick/math",
@@ -3722,16 +3722,16 @@
         },
         {
             "name": "nwidart/laravel-modules",
-            "version": "10.0.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nWidart/laravel-modules.git",
-                "reference": "ef67a7367223ab96539136116d69405d1c21c321"
+                "reference": "22355d3d21b0c13b584cfa30aef000f72332eda2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/ef67a7367223ab96539136116d69405d1c21c321",
-                "reference": "ef67a7367223ab96539136116d69405d1c21c321",
+                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/22355d3d21b0c13b584cfa30aef000f72332eda2",
+                "reference": "22355d3d21b0c13b584cfa30aef000f72332eda2",
                 "shasum": ""
             },
             "require": {
@@ -3747,6 +3747,7 @@
                 "phpunit/phpunit": "^10.0",
                 "spatie/phpunit-snapshot-assertions": "^5.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -3791,15 +3792,19 @@
             ],
             "support": {
                 "issues": "https://github.com/nWidart/laravel-modules/issues",
-                "source": "https://github.com/nWidart/laravel-modules/tree/10.0.2"
+                "source": "https://github.com/nWidart/laravel-modules/tree/master"
             },
             "funding": [
+                {
+                    "url": "https://github.com/dcblogdev",
+                    "type": "github"
+                },
                 {
                     "url": "https://github.com/nwidart",
                     "type": "github"
                 }
             ],
-            "time": "2023-10-18T19:14:29+00:00"
+            "time": "2023-10-22T15:39:58+00:00"
         },
         {
             "name": "nyholm/psr7",
@@ -10976,7 +10981,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "nwidart/laravel-modules": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

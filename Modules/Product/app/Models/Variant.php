@@ -11,11 +11,10 @@ use Modules\Business\app\Models\Business;
 use Modules\Measurement\app\Models\Unit;
 use Modules\Stock\app\Models\Stock;
 use Plank\Mediable\Mediable;
-use Stancl\Tenancy\Database\Concerns\CentralConnection;
 
 class Variant extends Model
 {
-    use CentralConnection, HasUuids, Mediable, Sluggable;
+    use HasUuids, Mediable, Sluggable;
 
     /**
      * The attributes that are mass assignable.
