@@ -11,7 +11,7 @@ class $CLASS$ extends Command
     /**
      * The name and signature of the console command.
      */
-    protected $name = '$COMMAND_NAME$';
+    protected $signature = '$COMMAND_NAME$';
 
     /**
      * The console command description.
